@@ -17,7 +17,7 @@ setup(
   packages=['afmt'],
   zip_safe=False,
   python_requires='>=3.6',
-  classifiers=(
+  classifiers=[
     'Development Status :: 3 - Alpha',
     'Environment :: Console',
     'Intended Audience :: Developers',
@@ -27,5 +27,5 @@ setup(
     'Topic :: Software Development :: Libraries :: Python Modules',
     'Topic :: Terminals',
     'Topic :: Text Processing :: General'
-  )
+  ]
 )
