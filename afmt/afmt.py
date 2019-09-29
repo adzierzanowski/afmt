@@ -159,6 +159,11 @@ class Formatter:
   FG8_REGEX = re.compile(r'fg8\((.+)\)', re.IGNORECASE)
   BG_REGEX = re.compile(r'bg\((.+)\)', re.IGNORECASE)
   BG8_REGEX = re.compile(r'bg8\((.+)\)', re.IGNORECASE)
+  CUP_REGEX = re.compile(r'(cur|goto)\((.+)\)', re.IGNORECASE)
+
+  @staticmethod
+  def cursor_position(row, col):
+    return Formatter.__esc(f'{row};{col}', end='H')
 
   @staticmethod
   def fg8(color_code):
@@ -175,7 +180,7 @@ class Formatter:
   @staticmethod
   def bg24(r, g, b):
     return Formatter.__esc(f'48;2;{r};{g};{b}')
-  
+
   @staticmethod
   def _generic_color(color_spec, offset=0):
     if color_spec in Formatter.FG_COLORS_4BIT:
@@ -239,6 +244,12 @@ class Formatter:
       if bg8_match:
         color_code = bg8_match.group(1)
         fmt += Formatter.bg8(color_code)
+        continue
+
+      cup_match = Formatter.CUP_REGEX.match(s)
+      if cup_match:
+        row, col = cup_match.group(2).split(',')
+        fmt += Formatter.cursor_position(row, col)
         continue
 
     return fmt

@@ -10,6 +10,7 @@ setup(
   version=meta.VERSION,
   description=meta.DESC,
   long_description=long_desc,
+  long_description_content_type='text/markdown',
   url='https://github.com/adzierzanowski/afmt',
   author='Aleksander Dzierżanowski',
   author_email='a.dzierzanowski1@gmail.com',
