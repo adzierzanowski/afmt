@@ -46,7 +46,7 @@ print(f'{f:reverse goto(4,6)}hello, world{f:e}')
 print(f'{f:bold italic}hello,{f:!bold} world{f:e}')
 ```
 
-[![asciicast](https://asciinema.org/a/271390.svg)](https://asciinema.org/a/271390)
+[![asciicast](https://asciinema.org/a/bDlnVRmdRpgq1cvTIRwawYswL.svg)](https://asciinema.org/a/bDlnVRmdRpgq1cvTIRwawYswL)
 
 # Development status
 
