@@ -188,7 +188,7 @@ class Formatter:
 
     try:
       color = int(color_spec)
-      return Formatter.__esc(color)
+      return Formatter.__esc(f'{38+offset};5;{color}')
     except ValueError:
       if ',' in color_spec:
         r, g, b = [int(c) for c in color_spec.split(',')]
