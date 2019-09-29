@@ -207,9 +207,25 @@ class Formatter:
   def bg(color_spec):
     return Formatter._generic_color(color_spec, offset=10)
 
+  def __init__(self, styles=None):
+    if styles is None:
+      self.styles = {}
+    else:
+      self.styles = styles 
+  
+  def add_style(self, name, specs):
+    self.styles[name] = specs
+  
   @_optional_formatting
   def __format__(self, spec_):
-    spec = spec_.split(' ')
+    spec = []
+
+    # Expand custom styles
+    for s in spec_.split(' '):
+      if s in self.styles:
+        spec += self.styles[s].split(' ')
+      else:
+        spec.append(s)
 
     fmt = ''
 
