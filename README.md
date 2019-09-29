@@ -13,6 +13,8 @@ and puts the sequences only if they're supported by the output device.
 
 # Usage and examples
 
+See the [docs](docs/index.md) for detailed information.
+
 ```python
 from afmt import Formatter
 
