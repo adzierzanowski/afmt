@@ -140,19 +140,19 @@ class Formatter:
     'bbk': 90,
     'brightblack': 90,
     'br': 91,
-    'brightred': 92,
-    'bg': 93,
-    'brightgreen': 93,
-    'by': 94,
-    'brightyellow': 95,
-    'bbl': 96,
-    'brightblue': 96,
-    'bm': 97,
-    'brightmagenta': 97,
-    'bc': 98,
-    'brightcyan': 98,
-    'bw': 99,
-    'brightwhite': 99
+    'brightred': 91,
+    'bg': 92,
+    'brightgreen': 92,
+    'by': 93,
+    'brightyellow': 93,
+    'bbl': 94,
+    'brightblue': 94,
+    'bm': 95,
+    'brightmagenta': 95,
+    'bc': 96,
+    'brightcyan': 96,
+    'bw': 97,
+    'brightwhite': 97
   }
 
   FG_REGEX = re.compile(r'fg\((.+)\)', re.IGNORECASE)
